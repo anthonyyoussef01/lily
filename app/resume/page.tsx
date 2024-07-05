@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-            <Link href="/" passHref>
+        <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-1 md:p-16">
+            <Link href="/" className="print:invisible" passHref>
                 <Button variant="outline" size="sm">
                     <ChevronLeftIcon className="h-4 w-4"/>
                 </Button>
@@ -96,7 +96,7 @@ export default function Page() {
                     </div>
 
                     <Avatar className="size-28">
-                        <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl}/>
+                        <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} className="print:invisible" />
                         <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
                     </Avatar>
                 </div>
@@ -177,14 +177,15 @@ export default function Page() {
                 </Section>
                 <Section>
                     <h2 className="text-xl font-bold">Skills</h2>
-                    <div className="flex flex-wrap gap-1">
-                        {RESUME_DATA.skills.map((skill) => {
-                            return (
-                                <Badge className="print:text-[10px]" key={skill}>
-                                    {skill}
-                                </Badge>
-                            );
-                        })}
+                    <div className="flex flex-wrap gap-1 print:hidden">
+                        {RESUME_DATA.skills.map((skill) => (
+                            <Badge className="print:text-[10px]" key={skill}>
+                                {skill}
+                            </Badge>
+                        ))}
+                    </div>
+                    <div className="hidden print:block print:text-[10px]">
+                        {RESUME_DATA.skills.join(", ")}
                     </div>
                 </Section>
 
