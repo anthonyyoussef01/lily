@@ -23,13 +23,7 @@ export const CommandMenu = ({ links }: Props) => {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      // Check if the device is running Windows
-      const isWindows = navigator.platform.startsWith('Win') || navigator.userAgent.includes('Win');
-      // Adjust the key combination for Windows devices
-      if (isWindows && e.key === "J" && e.ctrlKey) {
-        e.preventDefault();
-        setOpen((open) => !open);
-      } else if (!isWindows && e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      if ((e.key === "j" || e.key === "J") && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
@@ -65,6 +59,7 @@ export const CommandMenu = ({ links }: Props) => {
             <CommandItem
               onSelect={() => {
                 setOpen(false);
+
                 window.print();
               }}
             >
