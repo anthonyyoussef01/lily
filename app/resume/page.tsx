@@ -4,7 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {CommandMenu} from "@/components/command-menu";
 import {Metadata} from "next";
 import {Section} from "@/components/ui/section";
-import {ArrowLeftIcon, ChevronLeftIcon, GlobeIcon, MailIcon, PhoneIcon} from "lucide-react";
+import {DownloadIcon, ChevronLeftIcon, GlobeIcon, MailIcon, PhoneIcon} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {RESUME_DATA} from "@/data/resume-data";
 import {ProjectCard} from "@/components/project-card";
@@ -18,12 +18,16 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-1 md:p-16">
-            <Link href="/" className="print:invisible" passHref>
+        <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-7 md:p-16">
+            <Link href="/" className="print:hidden pr-1" passHref>
                 <Button variant="outline" size="sm">
                     <ChevronLeftIcon className="h-4 w-4"/>
                 </Button>
             </Link>
+            <a href="/Lily_Marino_Resume.pdf" download
+               className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-400 hover:bg-orange-300 print:hidden">
+                <DownloadIcon className="h-4 w-4 mr-2"/> Download PDF
+            </a>
             <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
                 <div className="flex items-center justify-between">
                     <div className="flex-1 space-y-1.5">
@@ -96,7 +100,7 @@ export default function Page() {
                     </div>
 
                     <Avatar className="size-28">
-                        <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} className="print:invisible" />
+                        <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} className="print:hidden"/>
                         <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
                     </Avatar>
                 </div>
