@@ -10,9 +10,9 @@ export default function Page() {
 
     return (
         <div className="dark min-h-screen bg-black">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto px-2">
                 <Navbar/>
-                <div className="h-[40rem] flex justify-center items-center px-4">
+                <div className="h-[40rem] flex justify-center items-center px-2">
                     <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
                         <span className="font-bold">Lily Marino:</span> <br/>
                         <FlipWords words={words}/> <br/>

@@ -18,7 +18,7 @@ export default function Navbar() {
         }
     ];
     return (
-        <nav className="py-9 flex justify-between items-center">
+        <nav className="flex justify-between items-center transition-all py-4 sm:py-5 md:py-7 lg:py-9">
             <div className="flex items-center border-b-orange-400 border-b-2">
                 <h1 className="text-gray-200 text-2xl font-bold">
                     Lily
