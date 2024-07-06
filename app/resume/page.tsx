@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-7 md:p-16">
+        <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-6 md:p-16">
             <Link href="/" className="print:hidden pr-1" passHref>
                 <Button variant="outline" size="sm">
                     <ChevronLeftIcon className="h-4 w-4"/>
                 </Button>
             </Link>
             <a href="/Lily_Marino_Resume.pdf" download
-               className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-400 hover:bg-orange-300 print:hidden">
+               className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-orange-400 bg-white border-orange-400 hover:text-white transition-all hover:border-white hover:bg-orange-400 print:hidden">
                 <DownloadIcon className="h-4 w-4 mr-2"/> Download PDF
             </a>
             <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
