@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-
 import {
   CommandDialog,
   CommandEmpty,
@@ -13,15 +12,23 @@ import {
 } from "@/components/ui/command";
 import { Button } from "./ui/button";
 import { CommandIcon } from "lucide-react";
+import {useState} from "react";
 
 interface Props {
   links: { url: string; title: string }[];
 }
 
 export const CommandMenu = ({ links }: Props) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [platform, setPlatform] = useState('');
 
   React.useEffect(() => {
+    // Set platform state based on the navigator object
+    const platformType =
+        navigator.userAgentData?.platform.startsWith('Win') || navigator.platform.startsWith('Win') ?
+            'Win' : 'Other';
+    setPlatform(platformType);
+
     const down = (e: KeyboardEvent) => {
       if ((e.key === "j" || e.key === "J") && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
@@ -39,7 +46,7 @@ export const CommandMenu = ({ links }: Props) => {
         Press{" "}
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           {/* Adjust the displayed key combination based on the OS */}
-          {navigator.platform.startsWith('Win') ? 'Ctrl+' : <span className="text-xs">⌘</span>}J
+          {platform === 'Win' ? 'Ctrl+' : <span className="text-xs">⌘</span>}J
         </kbd>{" "}
         to open the command menu
       </p>
