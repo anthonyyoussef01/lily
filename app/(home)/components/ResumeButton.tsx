@@ -54,7 +54,7 @@ export function ResumeButton({
     }, [hovered]);
 
     return (
-        <Link href="/resume" passHref>
+        <a href="/resume">
             <Tag
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
@@ -92,6 +92,6 @@ export function ResumeButton({
                 />
                 <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
             </Tag>
-        </Link>
+        </a>
     );
 }

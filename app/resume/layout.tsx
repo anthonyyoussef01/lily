@@ -15,8 +15,8 @@ export default function ResumeLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning={true}>
-            <body className={`${spaceGrotesk.className} bg-white`}>
+        <html lang="en" className={`${spaceGrotesk.className}`} suppressHydrationWarning={true}>
+            <body>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
