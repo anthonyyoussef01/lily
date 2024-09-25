@@ -37,6 +37,7 @@ export interface ResumeData {
     developerWebsiteUrl: string;
     contact: {
         email: string;
+        printEmail: string;
         tel: string;
         social: Array<{
             name: string;

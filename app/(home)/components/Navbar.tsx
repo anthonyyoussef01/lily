@@ -12,7 +12,7 @@ export default function Navbar() {
             icon: faLinkedin,
         },
         {
-            link: 'mailto:lilyam3.14@gmail.com',
+            link: 'mailto:lilyam3.14+website@gmail.com',
             label: 'Email',
             icon: faEnvelope,
         }

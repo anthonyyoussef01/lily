@@ -10,6 +10,7 @@ import {RESUME_DATA} from "@/data/resume-data";
 import {ProjectCard} from "@/components/project-card";
 import Link from "next/link";
 import {StaticImageData} from "next/image";
+import ClientSideEmail from "@/app/resume/components/ClientSideEmail";
 
 export const metadata: Metadata = {
     title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -87,10 +88,11 @@ export default function Page() {
                         <div
                             className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex print:text-[12px]">
                             {RESUME_DATA.contact.email ? (
-                                <a href={`mailto:${RESUME_DATA.contact.email}`}>
+                                <a href={`mailto:${RESUME_DATA.contact.email}`} className="print:hidden">
                                     <span className="underline">{RESUME_DATA.contact.email}</span>
                                 </a>
                             ) : null}
+                            <ClientSideEmail />
                             {RESUME_DATA.contact.tel ? (
                                 <a href={`tel:${RESUME_DATA.contact.tel}`}>
                                     <span className="underline">{RESUME_DATA.contact.tel}</span>
